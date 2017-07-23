@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/frontpage.css' %}" />
+{% endblock %}
+
+{% block title %}Thanks Open Source{% endblock %}
+
+{% block nav %}
+<div class="search-div container">
+  <div class="search-inside-div row">
+    <div class="search-col col-md-12">
+      <h1 id="header-thanks">Thank You, Open Source!</h1>
+      <span id="header-details">There is no reson don't thanks open source community and developers!</span>
+    </div>
+    <div class="search-select-wrapper">
+      <div class="control-group search-select col-md-8 col-md-offset-2">
+        <select id="select-thanks" class="repositories" placeholder="Pick a repository..."></select>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="">
+</div> <!-- end country-content -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+$('#select-thanks').selectize({
+      valueField: 'url',
+      labelField: 'name',
+      searchField: 'name',
+      options: [],
+      create: false,
+      render: {
+          option: function(item, escape) {
+              return '<div>' +
+                  '<span class="title">' +
+                      '<span class="name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + escape(item.name) + '</span>' +
+                      '<span class="by">' + escape(item.username) + '</span>' +
+                  '</span>' +
+                  '<span class="description">' + escape(item.description) + '</span>' +
+                  '<ul class="meta">' +
+                      (item.language ? '<li class="language">' + escape(item.language) + '</li>' : '') +
+                      '<li class="watchers"><span>' + escape(item.watchers) + '</span> watchers</li>' +
+                      '<li class="forks"><span>' + escape(item.forks) + '</span> forks</li>' +
+                  '</ul>' +
+              '</div>';
+          }
+      },
+      score: function(search) {
+          var score = this.getScoreFunction(search);
+          return function(item) {
+              return score(item) * (1 + Math.min(item.watchers / 100, 1));
+          };
+      },
+      load: function(query, callback) {
+          if (!query.length) return callback();
+          $.ajax({
+              url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
+              type: 'GET',
+              error: function() {
+                  callback();
+              },
+              success: function(res) {
+                  callback(res.repositories.slice(0, 20));
+              }
+          });
+      }
+});
+</script>
+{% endblock %}

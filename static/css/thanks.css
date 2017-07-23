@@ -1,0 +1,30 @@
+.say-thank-div {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.say-thank-span {
+    display: block;
+    font-size: 5vw;
+    font-weight: 500;
+}
+
+.say-thank-title {
+    font-size: 5vw;
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#editor {
+    height: 500px;
+}
+
+#editor-div {
+    margin: 0 auto;
+}
+
+.ql-container {
+    font-size: 20px;
+}

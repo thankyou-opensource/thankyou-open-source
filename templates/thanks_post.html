@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/css_lib/quill.snow.css' %}" />
+<link rel="stylesheet" href="{% static 'css/thanks.css' %}" />
+{% endblock %}
+
+{% block title %}Thanks Open Source{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="say-thank-div">
+        <span class="say-thank-span">Say Thank You To</span>
+        <h1 class="say-thank-title">{{ title }}</h1>
+      </div> <!-- end country-content -->
+      <div id="editor-div">
+        <div id="editor">
+          <p>Tell the world you love</p>
+        </div> <!-- end editor -->
+      </div> <!-- end editor-div -->
+    </div> <!-- end col-md-10 -->
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+<div class="container">
+<div class="input-group">
+  <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+  <input type="checkbox" checked id="get-recommend" name="recommend" value="recommend">
+  <label for="subscribeNews">Get recommend resources from {{ title }} maintainer</label>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Signature</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/js_lib/quill.min.js' %}"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+    var toolbarOptions = [
+        [
+            {'list': 'ordered'}, 
+            {'list': 'bullet'}, 
+            {'align': [] },
+            {'header': [1, 2, 3, 4, 5, 6, false]}
+        ],
+        ['link', 'code-block', 'blockquote'],
+        ['bold', { 'color': [] }],
+    ];
+    var Link = Quill.import("formats/link");
+    Link.sanitize = function(url) {
+        if (url.match("^http")) {
+            return url;
+        }
+        else
+            return "http://" + url;
+    
+    }
+    var editor = new Quill('#editor', {
+       modules: {
+         toolbar: toolbarOptions
+       },
+       theme: 'snow'
+    });
+</script>
+{% endblock %}

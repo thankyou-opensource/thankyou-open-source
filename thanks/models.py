@@ -7,7 +7,7 @@ class Thanks(models.Model):
     name = models.CharField(max_length=512)
     email = models.EmailField(blank=True)
     repo = models.CharField(max_length=1024)
-    project_url = models.URLField()
+    project_url = models.URLField(blank=True)
     likes = models.IntegerField(default=0)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
