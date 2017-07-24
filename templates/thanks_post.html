@@ -15,6 +15,9 @@
         <span class="say-thank-span">Say Thank You To</span>
         <h1 class="say-thank-title">{{ title }}</h1>
       </div> <!-- end country-content -->
+      <div class="editor-title">
+        <input type="text" class="form-control recommend-title" placeholder="* Title" aria-describedby="basic-addon1">
+      </div>
       <div id="editor-div">
         <div id="editor">
           <p>Tell the world you love</p>
@@ -24,20 +27,29 @@
   </div> <!-- end row -->
 </div> <!-- end container -->
 
-<div class="container">
-<div class="input-group">
-  <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-  <input type="checkbox" checked id="get-recommend" name="recommend" value="recommend">
-  <label for="subscribeNews">Get recommend resources from {{ title }} maintainer</label>
-</div>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Signature</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+<div class="container say-thank-bottom">
+  <div class="row say-thank-row">
+    <div class="col-md-8"></div>
+    <div class="input-group recommend-div col-md-4">
+      <input type="email" class="form-control recommend-email" placeholder="Email" aria-describedby="basic-addon1">
+      <input type="checkbox" id="get-recommend" name="recommend" value="recommend">
+      <label id="recommend-label" for="subscribeNews">Get recommend resources from {{ title }} maintainer</label>
+    </div> <!-- end input-group -->
+    <div class="input-group pull-right recommend-signature col-md-3">
+      <img id="signature-img" src="{% static 'imgs/signature.png' %}" />
+      <input type="text" class="form-control recommend-name" placeholder="* Your name" aria-describedby="basic-addon1">
+    </div>
+    <div class="clear"></div>
+    <div class="input-group pull-right">
+      <button type="button" class="btn btn-primary btn-lg submit-form">Submit</button>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
 {% block extra_scripts %}
 <script src="{% static 'js/js_lib/quill.min.js' %}"></script>
+<script src="{% static 'js/thanks.js' %}"></script>
 
 <!-- Initialize Quill editor -->
 <script>
@@ -65,6 +77,9 @@
          toolbar: toolbarOptions
        },
        theme: 'snow'
+    });
+    $(".submit-form").on("click", function() {
+        submit_form(editor);
     });
 </script>
 {% endblock %}

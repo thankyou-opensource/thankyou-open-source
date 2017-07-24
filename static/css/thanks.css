@@ -1,6 +1,13 @@
+.clear {
+    clear: both;
+}
 .say-thank-div {
     text-align: center;
     margin-bottom: 40px;
+}
+
+.say-thank-row {
+    margin-right: 0px;
 }
 
 .say-thank-span {
@@ -19,6 +26,7 @@
 
 #editor {
     height: 500px;
+    margin-bottom: 40px;
 }
 
 #editor-div {
@@ -27,4 +35,38 @@
 
 .ql-container {
     font-size: 20px;
+}
+
+.recommend-div {
+    margin-bottom: 40px;
+}
+
+.recommend-signature {
+    margin-bottom: 40px;
+}
+
+
+.form-control, .recommend-title {
+    height: 45px;
+}
+
+#recommend-label {
+    display: inline;
+    margin-left: 5px;
+}
+
+#signature-img {
+    max-width: 100%;
+}
+
+#signature-img {
+    margin-bottom: 10px;
+}
+
+.say-thank-bottom {
+    margin-bottom: 80px;
+}
+
+.editor-title {
+    margin-bottom: 20px;
 }
