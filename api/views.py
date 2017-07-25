@@ -8,8 +8,14 @@ from thanks.serializers import ThanksSerializer
 
 # Create your views here.
 class ThanksViewSet(viewsets.ModelViewSet):
-    queryset = Thanks.objects.all().order_by('-update_time')
     serializer_class = ThanksSerializer
+
+    def get_queryset(self):
+        queryset = Thanks.objects.all().order_by('-update_time')
+        repo = self.request.query_params.get('repo', None)
+        if repo is not None:
+            queryset = queryset.filter(repo=repo)
+        return queryset
 
 
 @api_view(['GET'])
