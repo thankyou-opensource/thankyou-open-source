@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/css_lib/quill.snow.css' %}" />
+<link rel="stylesheet" href="{% static 'css/thanks.css' %}" />
+<link rel="stylesheet" href="{% static 'css/list.css' %}" />
+{% endblock %}
+
+{% block title %}Thanks Open Source{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="say-thank-div">
+        <span class="say-thank-span">Thank You!</span>
+        <h1 class="say-thank-title">{{ title }}</h1>
+        <h2 class="say-thank-details"></h2>
+      </div> <!-- end country-content -->
+      <div class="editor-container container">
+        <div class="editor-row row">
+        </div>
+      </div> <!-- end editor-container -->
+    </div> <!-- end col-md-12 -->
+  </div> <!-- end row -->
+</div> <!-- end container -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/js_lib/quill.min.js' %}"></script>
+<script src="{% static 'js/list.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        var title = "{{ title }}";
+        get_thanks_list(title, $(".editor-row"));     
+        get_repo_details(title);
+    });
+</script>
+{% endblock %}

@@ -6,5 +6,5 @@ class ThanksSerializer(serializers.ModelSerializer):
     class Meta:
         model = Thanks
         fields = (
-            'title', 'name', 'email', 'content',
-            'create_time')
+            'id', 'title', 'name', 'email',
+            'repo', 'content', 'create_time')

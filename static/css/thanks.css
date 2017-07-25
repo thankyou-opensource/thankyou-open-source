@@ -3,7 +3,8 @@
 }
 .say-thank-div {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 .say-thank-row {
@@ -12,12 +13,12 @@
 
 .say-thank-span {
     display: block;
-    font-size: 5vw;
+    font-size: 7vw;
     font-weight: 500;
 }
 
 .say-thank-title {
-    font-size: 5vw;
+    font-size: 4vw;
     background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
     color:transparent;
     -webkit-background-clip: text;
@@ -70,3 +71,10 @@
 .editor-title {
     margin-bottom: 20px;
 }
+
+.say-thank-details {
+    font-weight: 100;
+    margin-top: 0;
+    padding-top: 0;
+}
+

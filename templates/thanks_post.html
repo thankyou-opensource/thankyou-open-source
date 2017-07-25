@@ -78,8 +78,9 @@
        },
        theme: 'snow'
     });
+    var title = "{{ title }}";
     $(".submit-form").on("click", function() {
-        submit_form(editor);
+        submit_form(editor, title);
     });
 </script>
 {% endblock %}

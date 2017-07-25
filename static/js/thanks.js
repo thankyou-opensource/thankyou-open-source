@@ -1,4 +1,4 @@
-function submit_form(editor) {
+function submit_form(editor, title) {
     var editor_length = editor.getLength(); 
     if (editor_length <= 1) {
         alert("The letter can't be empty");
@@ -21,7 +21,7 @@ function submit_form(editor) {
         "content": JSON.stringify(editor.getContents()),
         "email": $(".recommend-email").val(),
         "name": $(".recommend-name").val(),
-        "repo": "123"
+        "repo": title
     }
     var csrftoken = getCookie('csrftoken');
     $.ajax({
@@ -37,7 +37,6 @@ function submit_form(editor) {
             console.log(data);
         },
         error: function(data) {
-            console.log(responseText); 
         }
     });
     

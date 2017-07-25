@@ -4,6 +4,8 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'list/(?P<title>.+)/$',
+        views.thanks_list, name='thanks_list'),
     url(r'thanks/(?P<title>.+)/$',
         views.thanks, name='thanks'),
     url(r'^api/', include('api.urls')),

@@ -1,0 +1,30 @@
+.ql-toolbar {
+    display: none;
+}
+
+.ql-container.ql-snow {
+    border: 0px;
+}
+
+.editor-title-div {
+    text-align: center;
+}
+
+.editor-title-span {
+    font-size: 3.5vw;
+    font-weight: bold;
+}
+
+.editor-wrapper-div {
+    margin-bottom: 100px;
+}
+
+.editor-row {
+    margin: 0 auto;
+}
+
+.editor-name-span {
+    font-size: 1.5vw;
+    color: gray;
+    font-weight: 100;
+}

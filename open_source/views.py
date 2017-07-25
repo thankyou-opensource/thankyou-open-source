@@ -14,3 +14,12 @@ def thanks(request, title):
             'title': title
         }
     )
+
+
+def thanks_list(request, title):
+    return render(
+        request, 'thanks_list.html',
+        {
+            'title': title
+        }
+    )

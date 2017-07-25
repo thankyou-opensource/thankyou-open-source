@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Thanks(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=128)
     content = models.TextField()
     name = models.CharField(max_length=512)
     email = models.EmailField(blank=True)
