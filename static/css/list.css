@@ -13,6 +13,10 @@
 .editor-title-span {
     font-size: 3.5vw;
     font-weight: bold;
+    background-image: linear-gradient(to top, gray 0%, black 100%);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .editor-wrapper-div {
@@ -27,4 +31,16 @@
     font-size: 1.5vw;
     color: gray;
     font-weight: 100;
+}
+
+.say-thank-content {
+    margin-bottom: 100px;
+}
+
+.editor-likes-i {
+    margin-right: 10px;
+}
+
+.editor-likes-i:hover {
+    cursor: pointer;
 }

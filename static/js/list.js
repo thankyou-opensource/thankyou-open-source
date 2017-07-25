@@ -25,11 +25,25 @@ function set_content(data, container) {
         });
         // name
         var $editor_name_div = $("<div />", {
-            "class": "editor-name-div"
+            "class": "editor-name-div pull-right"
         });
         var $editor_name_span = $("<span />", {
-            "class": "editor-name-span pull-right",
+            "class": "editor-name-span",
             "text": v["name"]
+        });
+        //like
+        var $editor_likes_div = $("<div />", {
+            "class": "editor-likes-div",
+        });
+        $editor_likes_div.css("text-align", "right");
+        var $editor_likes_i = $("<i />", {
+            "class": "fa fa-heart fa-2x editor-likes-i",
+            "id": "likes-" + v["id"],
+            "aria-hidden": true
+        });
+        var $editor_likes_count = $("<span />", {
+            "class": "editor-likes-count",
+            "text": v["likes"]
         });
         // content
         var $editor_content_div = $("<div />", {
@@ -50,6 +64,9 @@ function set_content(data, container) {
         };
         $editor_content_div.css("margin-bottom", "40px");
         $editor_title_div.append($editor_title_span);
+        $editor_likes_div.append($editor_likes_i);
+        $editor_likes_div.append($editor_likes_count);
+        $editor_name_div.append($editor_likes_div);
         $editor_name_div.append($editor_name_span);
         $editor_wrapper_div.append($editor_title_div);
         $editor_wrapper_div.append("<hr>");
@@ -74,4 +91,26 @@ function get_repo_details(title) {
             $(".say-thank-details").text(data["items"][0]["description"]);
         },
     });
+}
+
+function click_like() {
+    $(".thank-you-container").on("click", ".editor-likes-i", function(event){
+        var raw_id = event.target.id;
+        id = raw_id.split("-")[1];
+        var csrftoken = getCookie('csrftoken');
+        $.ajax({
+            url: "/api/thanks/" + id + "/",
+            type: "PATCH",
+            dataType: "JSON",
+            data: "{likes: 1}",
+            beforeSend: function(xhr) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken)
+                },
+            success:function(data){
+            },
+            error: function(data) {
+            }
+        });
+    });
+    
 }

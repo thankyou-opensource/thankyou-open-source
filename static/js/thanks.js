@@ -34,7 +34,8 @@ function submit_form(editor, title) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken)
             },
 		success:function(data){
-            console.log(data);
+            var host = "http://"+ window.location.hostname + ":8000";
+            window.location = host + "/list/" + title + "/";
         },
         error: function(data) {
         }

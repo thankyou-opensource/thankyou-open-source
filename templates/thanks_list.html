@@ -9,13 +9,15 @@
 {% block title %}Thanks Open Source{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="thank-you-container container">
   <div class="row">
     <div class="col-md-12">
       <div class="say-thank-div">
         <span class="say-thank-span">Thank You!</span>
-        <h1 class="say-thank-title">{{ title }}</h1>
-        <h2 class="say-thank-details"></h2>
+        <div class="say-thank-content col-md-8 col-md-offset-2">
+          <h1 class="say-thank-title">{{ title }}</h1>
+          <h2 class="say-thank-details"></h2>
+        </div>
       </div> <!-- end country-content -->
       <div class="editor-container container">
         <div class="editor-row row">
@@ -34,6 +36,7 @@
         var title = "{{ title }}";
         get_thanks_list(title, $(".editor-row"));     
         get_repo_details(title);
+        click_like();
     });
 </script>
 {% endblock %}
