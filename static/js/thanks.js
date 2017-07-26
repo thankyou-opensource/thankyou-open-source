@@ -3,11 +3,6 @@ function submit_form(editor, title) {
     if (editor_length <= 1) {
         alert("The letter can't be empty");
     }
-    if ($("#get-recommend").prop("checked")) {
-        if ($(".recommend-email").val() == 0) {
-            alert("Please enter your email"); 
-        }
-    } 
     if ($(".recommend-name").val() == 0) {
         alert("Please enter your name"); 
     }
@@ -19,7 +14,6 @@ function submit_form(editor, title) {
     data = {
         "title": $(".recommend-title").val(),
         "content": JSON.stringify(editor.getContents()),
-        "email": $(".recommend-email").val(),
         "name": $(".recommend-name").val(),
         "repo": title
     }
