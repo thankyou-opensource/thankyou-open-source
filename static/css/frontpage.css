@@ -36,6 +36,7 @@
 	color: #fff;
     font-size: 1.5vw;
 	overflow: hidden;
+    width: 100%;
 }
 
 .author {
@@ -44,4 +45,8 @@
 
 .repo-name {
     font-size: 1.5vw;
+}
+
+#front-btn-w {
+    display: inline-block;
 }

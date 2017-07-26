@@ -1,3 +1,4 @@
+var host = "http://"+ window.location.hostname + ":8000";
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== "") {

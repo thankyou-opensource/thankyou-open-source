@@ -185,10 +185,10 @@ pre {
     margin-top: 3em;
 }
 
-.navbar-form .nav-search {
-    width: 500px;
+.form-group, .select-div {
+    width: 300px;
 }
 
-.nav-search input[type=text]{
-    width: 500px;
+.navbar-default {
+    background-color: white;
 }

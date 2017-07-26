@@ -37,12 +37,13 @@
     <div class="slider-inside-div"></div>
   </div> <!-- end slider -->
   <div class="slider-footer">
-      <a href="mailto:contact@thanksopensource.com?subject=Website/Book/Store?"><p>Add Recommendation if you are maintainer of {{ title }}</p></a>
+      <a class="slider-footer-a" href="mailto:contact@thanksopensource.com?subject=Website/Book/Store?"><p class="slider-footer-p">Submit if you are maintainer of {{ title }}</p></a>
   </div> <!-- end slider-footer -->
 </div> <!-- end slider-div -->
 <div class="editor-container container">
   <div class="editor-row row">
   </div>
+  <a id="list-btn-w" class="col-md-4 col-md-offset-4" href=""><button type="button" class="list-btn list-btn-write">Write one</button></a>
 </div> <!-- end editor-container -->
 
 {% endblock %}
@@ -58,6 +59,7 @@
         get_repo_details(title);
         slick_init();
         click_like();
+        update_click_url(title);
     });
 </script>
 {% endblock %}

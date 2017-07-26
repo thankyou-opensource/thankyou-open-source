@@ -88,7 +88,13 @@ function get_repo_details(title) {
         type: "GET",
         dataType: "JSON",
 		success:function(data){
-            $(".say-thank-details").text(data["items"][0]["description"]);
+            if (data["items"][0]["description"] == null) {
+                var des = "Description Is Empty";
+            }
+            else {
+                var des = data["items"][0]["description"];
+            }
+            $(".say-thank-details").text(des);
             $("#say-thank-a").attr("href", data["items"][0]["html_url"]);
         },
     });
@@ -149,4 +155,8 @@ function slick_init() {
           }
         ]
     });
+}
+
+function update_click_url(title) {
+    $("#list-btn-w").attr("href", host + "/thanks/" + title + "/");
 }
