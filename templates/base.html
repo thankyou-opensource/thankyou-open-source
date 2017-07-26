@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     {% block styles %}
+    <link rel="shortcut icon" href="{% static 'imgs/heart.png' %}"/>
     <link rel="stylesheet" href="{% static 'css/css_lib/nromalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/font-awesome.min.css' %}">
@@ -63,6 +64,12 @@
       options: [],
       create: false,
       render: {
+          item: function(item, escape) {
+              return '<div>' +
+                  (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+                  (item.username ? '<span class="email">' + escape(item.username) + '</span>' : '') +
+              '</div>';
+          },
           option: function(item, escape) {
               return '<div>' +
                   '<span class="title">' +
@@ -76,7 +83,7 @@
                       '<li class="forks"><span>' + escape(item.forks) + '</span> forks</li>' +
                   '</ul>' +
               '</div>';
-          }
+          },
       },
       score: function(search) {
           var score = this.getScoreFunction(search);

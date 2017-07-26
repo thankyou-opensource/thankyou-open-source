@@ -4,20 +4,23 @@
 <link rel="stylesheet" href="{% static 'css/frontpage.css' %}" />
 {% endblock %}
 
-{% block title %}Thanks Open Source{% endblock %}
-
+{% block title %}Thanks Open Source{% endblock %} 
 {% block nav %}
 <div class="search-div container">
   <div class="search-inside-div row">
     <div class="search-col col-md-12">
       <h1 id="header-thanks">Thank You, Open Source!</h1>
       <span id="header-details">There is no reson don't thanks open source community and developers!</span>
-    </div>
-    <div class="search-select-wrapper">
-      <div class="control-group search-select col-md-8 col-md-offset-2">
-        <select id="select-thanks" class="repositories" placeholder="Pick a repository..."></select>
-      </div> <!-- end search-select -->
-    </div> <!-- search-select-wrapper -->
+      <div class="search-select-wrapper">
+        <div class="control-group search-select col-md-8 col-md-offset-2">
+          <select id="select-thanks" class="repositories" placeholder="Pick a repository..."></select>
+        </div> <!-- end search-select -->
+      </div> <!-- search-select-wrapper -->
+      <div class="front-btn-div col-md-8 col-md-offset-2">
+        <a id="front-btn-w" href=""><button type="button" class="front-btn front-btn-write col-md-3 col-md-offset-2">Write</button></a>
+        <a id="front-btn-b" href=""><button type="button" class="front-btn col-md-3 col-md-offset-1">Browse</button></a>
+      </div>
+    </div> <!-- end search-col -->
   </div> <!-- search-inside-div row -->
 </div> <!-- search-div container -->
 {% endblock %}
@@ -29,6 +32,7 @@
 {% endblock %}
 
 {% block extra_scripts %}
+<script src="{% static 'js/frontpage.js' %}"></script>
 <script>
 $('#select-thanks').selectize({
       valueField: 'url',
@@ -37,10 +41,16 @@ $('#select-thanks').selectize({
       options: [],
       create: false,
       render: {
+          item: function(item, escape) {
+              return '<div>' +
+                  (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') + 
+                  (item.username ? '<span class="author">' + "  by " + escape(item.username) + '</span>' : '') +
+              '</div>';
+          },
           option: function(item, escape) {
               return '<div>' +
                   '<span class="title">' +
-                      '<span class="name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + escape(item.name) + '</span>' +
+                      '<span class="repo-name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + escape(item.name) + ' ' + '</span>' +
                       '<span class="by">' + escape(item.username) + '</span>' +
                   '</span>' +
                   '<span class="description">' + escape(item.description) + '</span>' +
@@ -61,7 +71,8 @@ $('#select-thanks').selectize({
       onItemAdd: function (value, item) {
           var repo_name = value.split("https://github.com/");
           var host = "http://"+ window.location.hostname + ":8000";
-          window.location = host + "/thanks/" + repo_name[1] + "/";
+          $("#front-btn-w").attr("href", host + "/thanks/" + repo_name[1] + "/");
+          $("#front-btn-b").attr("href", host + "/list/" + repo_name[1] + "/");
       },
       load: function(query, callback) {
           if (!query.length) return callback();

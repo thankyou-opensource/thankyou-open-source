@@ -1,3 +1,47 @@
 #select-thanks > .selectize-dropdown, .selectize-input, .selectize-input input {
     line-height: 40px;
 }
+
+.front-btn-div {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.front-btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 10px 10px 10px 10px;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.front-btn:hover {
+    background-color: #32789b;
+}
+
+.front-btn {
+	border-radius: 10px;
+	border: 3px solid #fff;
+	color: #fff;
+    font-size: 1.5vw;
+	overflow: hidden;
+}
+
+.author {
+    color: gray;
+}
+
+.repo-name {
+    font-size: 1.5vw;
+}

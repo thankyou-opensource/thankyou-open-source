@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{% static 'css/css_lib/quill.snow.css' %}" />
 <link rel="stylesheet" href="{% static 'css/thanks.css' %}" />
 <link rel="stylesheet" href="{% static 'css/list.css' %}" />
+<link rel="stylesheet" href="{% static 'css/css_lib/slick.css' %}" />
+<link rel="stylesheet" href="{% static 'css/css_lib/slick-theme.css' %}" />
 {% endblock %}
 
 {% block title %}Thanks Open Source{% endblock %}
@@ -13,29 +15,48 @@
   <div class="row">
     <div class="col-md-12">
       <div class="say-thank-div">
-        <span class="say-thank-span">Thank You!</span>
+        <img id="thanks-svg" src="{% static 'imgs/thanks.svg' %}" alt="Thank You"/>
         <div class="say-thank-content col-md-8 col-md-offset-2">
-          <h1 class="say-thank-title">{{ title }}</h1>
+            <a target="_blank" id="say-thank-a" href="" <h1 class="say-thank-title">{{ title }}</h1></a>
           <h2 class="say-thank-details"></h2>
         </div>
       </div> <!-- end country-content -->
-      <div class="editor-container container">
-        <div class="editor-row row">
-        </div>
-      </div> <!-- end editor-container -->
     </div> <!-- end col-md-12 -->
   </div> <!-- end row -->
 </div> <!-- end container -->
+<div class="slider-div">
+  <div class="slider-title">
+    <h2>Recommended By Maintainer</h2>
+  </div> <!-- end slider-title -->
+  <div class="slider responsive">
+    <div class="slider-inside-div"></div>
+    <div class="slider-inside-div"></div>
+    <div class="slider-inside-div"></div>
+    <div class="slider-inside-div"></div>
+    <div class="slider-inside-div"></div>
+    <div class="slider-inside-div"></div>
+  </div> <!-- end slider -->
+  <div class="slider-footer">
+      <a href="mailto:contact@thanksopensource.com?subject=Website/Book/Store?"><p>Add Recommendation if you are maintainer of {{ title }}</p></a>
+  </div> <!-- end slider-footer -->
+</div> <!-- end slider-div -->
+<div class="editor-container container">
+  <div class="editor-row row">
+  </div>
+</div> <!-- end editor-container -->
+
 {% endblock %}
 
 {% block extra_scripts %}
 <script src="{% static 'js/js_lib/quill.min.js' %}"></script>
+<script src="{% static 'js/js_lib/slick.min.js' %}"></script>
 <script src="{% static 'js/list.js' %}"></script>
 <script>
     $(document).ready(function(){
         var title = "{{ title }}";
         get_thanks_list(title, $(".editor-row"));     
         get_repo_details(title);
+        slick_init();
         click_like();
     });
 </script>

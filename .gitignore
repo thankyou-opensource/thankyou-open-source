@@ -10,8 +10,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
-downloads/
+dist/ downloads/
 eggs/
 .eggs/
 lib/
@@ -98,4 +97,4 @@ ENV/
 # mypy
 .mypy_cache/
 db.sqlite3
-.DS_Store
+**/.DS_Store

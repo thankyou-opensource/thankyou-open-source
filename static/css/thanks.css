@@ -2,8 +2,9 @@
     clear: both;
 }
 .say-thank-div {
+    overflow: auto;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     margin-top: 100px;
 }
 
@@ -22,9 +23,8 @@
 }
 
 .say-thank-title {
-    font-size: 5.5vw;
+    font-size: 4.5vw;
     background: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
-    color:transparent;
     -webkit-background-clip: text;
     background-clip: text;
     margin-bottom: 20px;

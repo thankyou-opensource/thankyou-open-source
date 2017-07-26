@@ -34,7 +34,7 @@
 }
 
 .say-thank-content {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 .editor-likes-i {
@@ -43,4 +43,27 @@
 
 .editor-likes-i:hover {
     cursor: pointer;
+}
+
+#thanks-svg {
+    width: 300px;
+}
+
+.slider-div {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.slider-title, .slider-footer {
+    text-align: center;
+}
+
+
+.slider-inside-div {
+    background: #f2f2f2;
+    line-height:100px;
+    margin:10px;
+    padding:2%;
+    min-height: 200px !important;
+    position:relative;
 }
