@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/css_lib/nromalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css_lib/quill.snow.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     {% endblock %}
@@ -33,6 +34,15 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Thanks</a>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <select id="select-nav" class="repositories" placeholder="Pick a repository..."></select>
+          </div>
+          <span class="nav-btn-span">
+            <a href="" class="btn btn-default nav-btn nav-write-btn" role="button">WRITE</a>
+            <a href="" class="btn btn-default nav-btn nav-browse-btn" role="button">BROWSE</a>
+          </span>
+        </form>
       </div>
     </div><!-- /.container-fluid -->
   </nav>
@@ -50,8 +60,67 @@
   <script src="{% static 'js/js_lib/selectize.min.js' %}"></script>
   <script src="{% static 'js/js_lib/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/base.js' %}"></script>
-  {% endblock %}
+  <script src="{% static 'js/js_lib/quill.min.js' %}"></script>
+  <script>
+      $('#select-nav').selectize({
+          valueField: 'url',
+          labelField: 'name',
+          searchField: 'name',
+          options: [],
+          create: false,
+          render: {
+              item: function(item, escape) {
+                  return '<div>' +
+                      (item.name ? '<span class="nav-repo-name">' + escape(item.name) + '</span>' : '') + 
+                      (item.username ? '<span class="author">' + "  by " + escape(item.username) + '</span>' : '') +
+                  '</div>';
+              },
+              option: function(item, escape) {
+                  return '<div>' +
+                      '<span class="title">' +
+                          '<span class="repo-name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + escape(item.name) + ' ' + '</span>' +
+                          '<span class="by">' + escape(item.username) + '</span>' +
+                      '</span>' +
+                      '<span class="description">' + escape(item.description) + '</span>' +
+                      '<ul class="meta">' +
+                          (item.language ? '<li class="language">' + escape(item.language) + '</li>' : '') +
+                          '<li class="watchers"><span>' + escape(item.watchers) + '</span> stars</li>' +
+                          '<li class="forks"><span>' + escape(item.forks) + '</span> forks</li>' +
+                      '</ul>' +
+                  '</div>';
+              }
+          },
+          score: function(search) {
+              var score = this.getScoreFunction(search);
+              return function(item) {
+                  return score(item) * (1 + Math.min(item.watchers / 100, 1));
+              };
+          },
+          onItemAdd: function (value, item) {
+              var repo_name = value.split("https://github.com/");
+              $(".nav-write-btn").attr("href", host + "/thanks/" + repo_name[1] + "/");
+              $(".nav-browse-btn").attr("href", host + "/list/" + repo_name[1] + "/");
+          },
+          load: function(query, callback) {
+              if (!query.length) return callback();
+              $.ajax({
+                  url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
+                  type: 'GET',
+                  error: function() {
+                      callback();
+                  },
+                  success: function(res) {
+                      callback(res.repositories.slice(0, 20));
+                  }
+              });
+          }
+      });
 
+  $(document).ready(function(){
+      check_repo($(".nav-btn"), ".nav-repo-name"); 
+  });
+  </script>
+  {% endblock %}
   {% block extra_scripts %}
   {% endblock %}
 
@@ -61,13 +130,13 @@
     <div class="base-footer container">
       <div class="row footer-div">
         <div class="col-md-4">
-          <p>© 2017 - Unicooo</p>
+          <a href="mailto:contact@thanksopensource.com?subject=Suggestions"><h4>Suggestions?</h4></a>
         </div>
         <div class="col-md-4">
-          <p>© 2017 - Unicooo</p>
+          <a href="/why/"><h4>Why?</h4></a>
         </div>
         <div class="col-md-4">
-          <p>© 2017 - Unicooo</p>
+          <h4>© 2017 - Unicooo</h4>
         </div>
       </div> <!-- end pure-g -->
     </div> <!-- end base-footer -->

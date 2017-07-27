@@ -1,7 +1,3 @@
-#select-thanks > .selectize-dropdown, .selectize-input, .selectize-input input {
-    line-height: 40px;
-}
-
 .front-btn-div {
     margin-top: 20px;
     text-align: left;
@@ -49,4 +45,12 @@
 
 #front-btn-w {
     display: inline-block;
+}
+
+.ql-toolbar {
+    display: none;
+}
+
+.ql-container.ql-snow {
+    border: 0px;
 }

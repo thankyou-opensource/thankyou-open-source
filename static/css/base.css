@@ -36,9 +36,13 @@ header a:hover {
   color: white;
 }
 
-h2 {
+h2, h4 {
   margin-top: 1em;
   padding-top: 1em;
+}
+
+h4 {
+  line-height: 1.5;
 }
 
 h1, h2, strong {
@@ -60,6 +64,7 @@ pre {
 
 .search-div {
     width: 100%;
+    margin-bottom: 60px;
 }
 
 .search-inside-div {
@@ -143,7 +148,7 @@ pre {
     z-index: 2;
     position: absolute;
     display: block;
-    top: 20px;
+    top: 10px;
     right: 34px;
     width: 16px;
     height: 16px;
@@ -191,4 +196,88 @@ pre {
 
 .navbar-default {
     background-color: white;
+}
+
+
+.say-thank-title {
+    font-size: 4.5vw;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+.say-thank-content {
+    margin-bottom: 20px;
+}
+
+.say-thank-details {
+    font-weight: 100;
+    margin-top: 0;
+    padding-top: 0;
+    color: gray;
+}
+
+#thanks-svg {
+    width: 60%;
+}
+
+.footer-div {
+    text-align: center;
+}
+
+#why-h1-span {
+    text-align: center;
+}
+
+.editor-title-div {
+    text-align: center;
+}
+
+.editor-title-span {
+    font-size: 3.5vw;
+    font-weight: bold;
+    background-image: linear-gradient(to top, gray 0%, black 100%);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.editor-wrapper-div {
+    margin-bottom: 100px;
+}
+
+.ql-container {
+    font-size: 20px;
+}
+
+.editor-row {
+    margin: 0 auto;
+}
+
+.editor-likes-count {
+    font-size: 1.5vw;
+}
+
+.editor-name-span {
+    font-size: 1.5vw;
+    color: gray;
+    font-weight: 100;
+}
+
+.editor-likes-i {
+    margin-right: 10px;
+}
+
+.editor-likes-i:hover {
+    cursor: pointer;
+}
+
+.nav-write-btn, .nav-browse-btn {
+}
+
+#select-thanks > .selectize-dropdown, .selectize-input, .selectize-input input {
+    line-height: 25px;
+}
+
+.nav-btn-span {
+    margin-left: 10px;
 }

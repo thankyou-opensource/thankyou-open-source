@@ -27,12 +27,15 @@
 
 
 {% block content %}
-<div class="">
-</div> <!-- end country-content -->
+<div class="editor-container container">
+  <div class="editor-row row">
+  </div> <!-- end editor-row -->
+</div> <!-- end editor-container -->
 {% endblock %}
 
 {% block extra_scripts %}
 <script src="{% static 'js/frontpage.js' %}"></script>
+<script src="{% static 'js/list.js' %}"></script>
 <script>
 $('#select-thanks').selectize({
       valueField: 'url',
@@ -88,10 +91,12 @@ $('#select-thanks').selectize({
           });
       }
 });
+$("#select-thanks").parent().find(".selectize-input").css("line-height", "40px");
 </script>
 <script>
 $(document).ready(function(){
-    check_repo();
+    check_repo($(".front-btn"), ".repo-name");
+    get_all_thanks_list($(".editor-row"));
 });
 </script>
 {% endblock %}

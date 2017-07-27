@@ -6,49 +6,6 @@
     border: 0px;
 }
 
-.editor-title-div {
-    text-align: center;
-}
-
-.editor-title-span {
-    font-size: 3.5vw;
-    font-weight: bold;
-    background-image: linear-gradient(to top, gray 0%, black 100%);
-    color:transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.editor-wrapper-div {
-    margin-bottom: 100px;
-}
-
-.editor-row {
-    margin: 0 auto;
-}
-
-.editor-name-span {
-    font-size: 1.5vw;
-    color: gray;
-    font-weight: 100;
-}
-
-.say-thank-content {
-    margin-bottom: 20px;
-}
-
-.editor-likes-i {
-    margin-right: 10px;
-}
-
-.editor-likes-i:hover {
-    cursor: pointer;
-}
-
-#thanks-svg {
-    width: 300px;
-}
-
 .slider-div {
     margin-top: 20px;
     margin-bottom: 60px;
@@ -64,7 +21,7 @@
     line-height:100px;
     margin:10px;
     padding:2%;
-    min-height: 250px !important;
+    min-height: 150px !important;
     position:relative;
 }
 
