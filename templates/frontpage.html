@@ -73,7 +73,6 @@ $('#select-thanks').selectize({
       },
       onItemAdd: function (value, item) {
           var repo_name = value.split("https://github.com/");
-          var host = "http://"+ window.location.hostname + ":8000";
           $("#front-btn-w").attr("href", host + "/thanks/" + repo_name[1] + "/");
           $("#front-btn-b").attr("href", host + "/list/" + repo_name[1] + "/");
       },
