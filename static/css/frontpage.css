@@ -27,12 +27,10 @@
 }
 
 .front-btn {
-	border-radius: 10px;
-	border: 3px solid #fff;
 	color: #fff;
     font-size: 1.5vw;
 	overflow: hidden;
-    width: 100%;
+    max-width: 100%;
 }
 
 .author {
@@ -43,8 +41,11 @@
     font-size: 1.5vw;
 }
 
-#front-btn-w {
+#front-btn-w, #front-btn-b {
     display: inline-block;
+    border: 3px solid #fff;
+	border-radius: 10px;
+    text-align: center;
 }
 
 .ql-toolbar {

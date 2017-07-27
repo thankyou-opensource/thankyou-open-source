@@ -281,3 +281,12 @@ pre {
 .nav-btn-span {
     margin-left: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+    .editor-title-span {
+        font-size: 7vw; 
+    }
+    .say-thank-title {
+        font-size: 9vw; 
+    }
+}
