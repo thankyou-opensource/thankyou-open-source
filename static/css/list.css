@@ -20,8 +20,6 @@
     background: #f2f2f2;
     line-height:100px;
     margin:10px;
-    padding:2%;
-    min-height: 200px !important;
     position:relative;
 }
 
@@ -31,4 +29,8 @@
 
 .slider-footer-p {
     color: #555;
+}
+
+.slider-img {
+    max-width: 100%;
 }

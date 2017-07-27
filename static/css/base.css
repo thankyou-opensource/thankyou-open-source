@@ -205,6 +205,10 @@ pre {
     word-wrap: break-word;
 }
 
+.editor-title-span {
+    word-wrap: break-word;
+}
+
 .say-thank-content {
     margin-bottom: 20px;
 }

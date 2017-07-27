@@ -118,6 +118,7 @@ function slick_init() {
         dots: true,
         infinite: false,
         speed: 300,
+        adaptiveHeight: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
