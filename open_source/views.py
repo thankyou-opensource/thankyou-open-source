@@ -23,3 +23,8 @@ def thanks_list(request, title):
             'title': title
         }
     )
+
+
+def why(request):
+    return render(
+        request, 'why.html')
