@@ -9,9 +9,6 @@ thanks_list = views.ThanksViewSet.as_view({
 
 thanks_detail = views.ThanksViewSet.as_view({
     'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
 })
 
 
