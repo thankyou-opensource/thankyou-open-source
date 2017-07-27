@@ -1,14 +1,17 @@
 function submit_form(editor, title) {
     var editor_length = editor.getLength(); 
-    if (editor_length <= 1) {
-        alert("The letter can't be empty");
+    if (editor_length <= 500) {
+        alert("This letter must have at least 500 words");
+        return false;
     }
     if ($(".recommend-name").val() == 0) {
         alert("Please enter your name"); 
+        return false;
     }
 
     if ($(".recommend-title").val() == 0) {
         alert("Please enter the title"); 
+        return false;
     }
 
     data = {
@@ -28,7 +31,7 @@ function submit_form(editor, title) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken)
             },
 		success:function(data){
-            window.location = host + "/list/" + title + "/";
+            window.location = host + "/letter/" + data["id"] + "/" + data["repo"] + "/";
         },
         error: function(data) {
         }

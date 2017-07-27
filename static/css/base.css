@@ -236,7 +236,6 @@ pre {
     font-size: 3.5vw;
     font-weight: bold;
     background-image: linear-gradient(to top, gray 0%, black 100%);
-    color:transparent;
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -247,6 +246,10 @@ pre {
 
 .ql-container {
     font-size: 20px;
+}
+
+.ql-editor {
+    font-size: 1.5vw;
 }
 
 .editor-row {
@@ -289,4 +292,63 @@ pre {
     .say-thank-title {
         font-size: 9vw; 
     }
+}
+
+.say-thank-div {
+    overflow: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.say-thank-row {
+    margin-right: 0px;
+}
+
+.say-thank-span {
+    display: block;
+    font-size: 7vw;
+    font-weight: 500;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.recommend-title {
+    font-size: 20px;
+}
+
+#list-btn-w {
+	border: 3px solid #337ab7;
+    border-radius: 10px;
+    margin-bottom: 80px;
+}
+
+
+.list-btn-write {
+    border-radius: 10px;
+	color: #fff;
+    font-size: 2vw;
+	overflow: hidden;
+    width: 100%;
+    border: none;
+	font-family: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 10px 10px 10px 10px;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#list-btn-w:hover {
+    background-color: #337ab7;
+    color: white;
 }

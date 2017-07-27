@@ -1,26 +1,6 @@
 .clear {
     clear: both;
 }
-.say-thank-div {
-    overflow: auto;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.say-thank-row {
-    margin-right: 0px;
-}
-
-.say-thank-span {
-    display: block;
-    font-size: 7vw;
-    font-weight: 500;
-    background: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-    color:transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
 
 #editor {
     height: 500px;

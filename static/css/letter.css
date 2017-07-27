@@ -1,0 +1,15 @@
+.ql-toolbar {
+    display: none;
+}
+
+.ql-container.ql-snow {
+    border: 0px;
+}
+
+.editor-row {
+    min-height: 600px;
+}
+
+#editor {
+    margin-bottom: 100px;
+}

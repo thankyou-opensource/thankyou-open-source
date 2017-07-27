@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{% static 'css/css_lib/slick-theme.css' %}" />
 {% endblock %}
 
-{% block title %}Thanks Open Source{% endblock %}
+{% block title %}Thank you {{ title }}{% endblock %}
 
 {% block content %}
 <div class="thank-you-container container">
@@ -51,13 +51,13 @@
 <script src="{% static 'js/js_lib/slick.min.js' %}"></script>
 <script src="{% static 'js/list.js' %}"></script>
 <script>
-    $(document).ready(function(){
-        var title = "{{ title }}";
-        get_thanks_list(title, $(".editor-row"));     
-        get_repo_details(title);
-        slick_init();
-        click_like();
-        update_click_url(title);
-    });
+$(document).ready(function(){
+    var title = "{{ title }}";
+    get_thanks_list(title, $(".editor-row"));     
+    get_repo_details(title);
+    slick_init();
+    click_like();
+    update_click_url(title);
+});
 </script>
 {% endblock %}

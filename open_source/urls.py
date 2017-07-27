@@ -11,6 +11,8 @@ urlpatterns = [
         views.thanks_list, name='thanks_list'),
     url(r'thanks/(?P<title>.+)/$',
         views.thanks, name='thanks'),
+    url(r'letter/(?P<id>[0-9]+)/(.+)/$',
+        views.letter, name='letter'),
     url(r'why/$',
         views.why, name='why'),
     url(r'^', views.frontpage),
