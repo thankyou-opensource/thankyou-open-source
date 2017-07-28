@@ -31,6 +31,10 @@ function set_content(data, container) {
         var $editor_title_div = $("<div />", {
             "class": "editor-title-div"
         });
+        var $editor_title_a = $("<a />", {
+            "class": "editor-title-a",
+            "href": host + "/letter/" + v["id"] + "/" + replaceSpace(v["title"]) + "/"
+        });
         var $editor_title_span = $("<span />", {
             "class": "editor-title-span",
             "text": v["title"]
@@ -75,7 +79,8 @@ function set_content(data, container) {
             },
         };
         $editor_content_div.css("margin-bottom", "40px");
-        $editor_title_div.append($editor_title_span);
+        $editor_title_a.append($editor_title_span);
+        $editor_title_div.append($editor_title_a);
         $editor_likes_div.append($editor_likes_i);
         $editor_likes_div.append($editor_likes_count);
         $editor_name_div.append($editor_likes_div);
@@ -91,20 +96,26 @@ function set_content(data, container) {
     });
 }
 
-function click_like() {
-    $(".thank-you-container").on("click", ".editor-likes-i", function(event){
+function click_like(container) {
+    container.on("click", ".editor-likes-i", function(event){
         var raw_id = event.target.id;
         id = raw_id.split("-")[1];
         var csrftoken = getCookie('csrftoken');
         $.ajax({
-            url: "/api/thanks/" + id + "/",
-            type: "PATCH",
+            url: "/likes/" + id + "/",
+            type: "POST",
             dataType: "JSON",
             data: {"likes": id},
             beforeSend: function(xhr) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken)
                 },
             success:function(data){
+                var id = data["id"];
+                $("#likes-" + id).css("color", "#e35336");
+                likes_count = $("#likes-" + id).parent().children(".editor-likes-count").text();
+                likes_count = Number(likes_count) + 1;
+                $("#likes-" + id).parent().children(".editor-likes-count").text(likes_count);
+
             },
             error: function(data) {
             }

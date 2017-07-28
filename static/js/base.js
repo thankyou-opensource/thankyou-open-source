@@ -44,3 +44,7 @@ function check_repo(btn, repo) {
         }
     });
 }
+
+function replaceSpace(title) {
+    return title.replace(/ /g, "-");
+}

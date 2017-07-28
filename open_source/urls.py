@@ -7,6 +7,8 @@ urlpatterns = [
     url(r'^api/', include('api.urls')),
     url(r'^api-auth/', include(
         'rest_framework.urls', namespace='rest_framework')),
+    url(r'likes/(?P<id>[0-9]+)/$',
+        views.likes, name='likes'),
     url(r'list/(?P<title>.+)/$',
         views.thanks_list, name='thanks_list'),
     url(r'thanks/(?P<title>.+)/$',

@@ -89,7 +89,7 @@ pre {
 }
 
 #header-details {
-    font-size: 2vw;
+    font-size: 2.3vw;
     font-weight: 100;
     color: white;
 }
@@ -293,6 +293,9 @@ pre {
 }
 
 @media only screen and (max-width: 768px) {
+    .why-href {
+        font-size: 3.5vw !important;
+    }
     .editor-title-span {
         font-size: 7vw; 
     }
@@ -383,4 +386,19 @@ pre {
 #list-btn-w:hover {
     background-color: #337ab7;
     color: white;
+}
+
+.why-href {
+    font-size: 1.5vw;
+}
+
+#logo-t {
+    font-weight: bold;
+}
+
+#submit-btn {
+    border: 3px solid #337ab7;
+    border-radius: 10px;
+    background-color: white;
+    color: #337ab7;
 }

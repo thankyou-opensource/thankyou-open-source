@@ -1,5 +1,7 @@
-import json
 from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+from django.http import HttpResponse
+from django.db.models import F
 from thanks.models import Thanks
 
 
@@ -41,3 +43,8 @@ def letter(request, id):
                 'content': thanks.content,
                 'repo': thanks.repo
             })
+
+
+def likes(request, id):
+    Thanks.objects.filter(id=id).update(likes=F('likes')+1)
+    return JsonResponse({'id': id}, status=200)

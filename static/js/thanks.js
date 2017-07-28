@@ -31,7 +31,7 @@ function submit_form(editor, title) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken)
             },
 		success:function(data){
-            window.location = host + "/letter/" + data["id"] + "/" + data["title"] + "/";
+            window.location = host + "/letter/" + data["id"] + "/" + replaceSpace(data["title"]) + "/";
         },
         error: function(data) {
         }
