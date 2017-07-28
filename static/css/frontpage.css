@@ -4,10 +4,10 @@
 }
 
 .front-btn {
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
+	color: #fff;
+    font-size: 1.5vw;
+	overflow: hidden;
+    max-width: 100%;
 	background: none;
 	cursor: pointer;
 	padding: 10px 10px 10px 10px;
@@ -24,13 +24,12 @@
 
 .front-btn:hover {
     background-color: #32789b;
+    color: white;
 }
 
-.front-btn {
-	color: #fff;
-    font-size: 1.5vw;
-	overflow: hidden;
-    max-width: 100%;
+.front-btn-write, .front-btn-browse {
+    background-color: transparent;
+	border: none;
 }
 
 .author {

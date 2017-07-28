@@ -37,14 +37,19 @@
         <form class="navbar-form navbar-left">
           <div class="form-group">
             <select id="select-nav" class="repositories" placeholder="Pick a repository..."></select>
-          </div>
+          </div> <!-- end form-group -->
           <span class="nav-btn-span">
             <a href="" class="btn btn-default nav-btn nav-write-btn" role="button">WRITE</a>
             <a href="" class="btn btn-default nav-btn nav-browse-btn" role="button">BROWSE</a>
           </span>
         </form>
-      </div>
-    </div><!-- /.container-fluid -->
+      </div> <!--end navbar-header-->
+      <ul class="nav navbar-nav pull-right">
+        <li>
+          <a target="_blank" href="https://twitter.com/tyopensource"><i class="fa fa-2x fa-twitter"></i> Follow on Twitter</a>
+        </li>
+      </ul>
+    </div><!-- .container-fluid -->
   </nav>
   {% endblock %}
 
@@ -130,7 +135,7 @@
     <div class="base-footer container">
       <div class="row footer-div">
         <div class="col-xs-4 col-sm-4 col-md-4">
-          <a href="mailto:contact@thanksopensource.com?subject=Suggestions"><h4>Suggestions?</h4></a>
+          <a href="mailto:contact@thankyouopensource.com?subject=Suggestions"><h4>Suggestions?</h4></a>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
           <a href="/why/"><h4>Why?</h4></a>
