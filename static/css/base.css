@@ -6,6 +6,10 @@ body {
   line-height: 1.5;
 }
 
+.navbar-form {
+    margin-right: 0px;
+}
+
 header {
   line-height: 1.2;
   padding: 10vw 2em;
@@ -239,7 +243,6 @@ pre {
 .editor-title-span {
     font-size: 3.5vw;
     font-weight: bold;
-    background-image: linear-gradient(to top, gray 0%, black 100%);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -293,8 +296,33 @@ pre {
     .editor-title-span {
         font-size: 7vw; 
     }
+    .editor-name-span {
+        font-size: 4vw; 
+    }
+    .editor-likes-i, .editor-likes-count {
+        font-size: 4vw; 
+    }
     .say-thank-title {
         font-size: 9vw; 
+    }
+    .repo-name, .repo-name span, .nav-repo-name, .nav-repo-name span{
+        font-size: 6vw !important; 
+    }
+    .front-btn {
+        font-size: 3.5vw !important; 
+    }
+    #header-thanks {
+        font-size: 10vw; 
+    }
+    #header-details {
+        font-size: 5vw; 
+    }
+
+    .list-btn-write {
+        font-size: 5vw !important; 
+    }
+    .ql-editor {
+        font-size: 5vw; 
     }
 }
 
