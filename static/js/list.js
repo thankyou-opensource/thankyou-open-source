@@ -112,9 +112,10 @@ function click_like(container) {
             success:function(data){
                 var id = data["id"];
                 $("#likes-" + id).css("color", "#e35336");
-                likes_count = $("#likes-" + id).parent().children(".editor-likes-count").text();
-                likes_count = Number(likes_count) + 1;
-                $("#likes-" + id).parent().children(".editor-likes-count").text(likes_count);
+                likes_count = $("#likes-" + id).parent().children(".editor-likes-count");
+                likes_count_text = Number(likes_count.text()) + 1;
+                $("#likes-" + id).parent().children(".editor-likes-count").text(likes_count_text);
+                likes_count.css("color", "#e35336");
 
             },
             error: function(data) {
