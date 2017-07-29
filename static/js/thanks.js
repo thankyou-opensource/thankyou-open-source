@@ -1,7 +1,7 @@
 function submit_form(editor, title) {
     var editor_length = editor.getLength(); 
     if (editor_length <= 500) {
-        alert("This letter must have at least 500 words");
+        alert("This letter must have at least 500 characters");
         return false;
     }
     if ($(".recommend-name").val() == 0) {
