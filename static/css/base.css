@@ -73,8 +73,8 @@ pre {
 
 .search-inside-div {
     text-align: center;
-    height: 450px;
     background: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+    padding-bottom: 40px;
 }
 
 .search-select {
@@ -292,7 +292,7 @@ pre {
     margin-left: 10px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .why-href {
         font-size: 3.5vw !important;
     }

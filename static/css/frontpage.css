@@ -54,3 +54,27 @@
 .ql-container.ql-snow {
     border: 0px;
 }
+
+.intro-img {
+    width: 30%;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.intro-span-title {
+    font-size: 2vw;
+}
+
+.intro-span-p {
+    font-size: 2vw;
+    font-weight
+}
+
+@media only screen and (max-width: 767px) {
+    .intro-span-title {
+        font-size: 4vw;
+    }
+}
