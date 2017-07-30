@@ -27,6 +27,7 @@
         <div id="editor">
             <p>What is the story between you and {{ title }} <br/>(This letter must have at least 300 characters). </p>
         </div> <!-- end editor -->
+        <span class="letter-count"></span>
       </div> <!-- end editor-div -->
     </div> <!-- end col-md-10 -->
   </div> <!-- end row -->
@@ -82,6 +83,14 @@
     var title = "{{ title }}";
     $(".submit-form").on("click", function() {
         submit_form(editor, title);
+    });
+
+    var editor_length = editor.getLength(); 
+    $(".letter-count").text(editor_length);
+
+    $("#editor").on("keyup", function() {
+        var editor_length = editor.getLength(); 
+        $(".letter-count").text(editor_length);
     });
 </script>
 {% endblock %}

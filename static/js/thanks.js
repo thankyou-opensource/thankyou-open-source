@@ -1,6 +1,6 @@
 function submit_form(editor, title) {
     var editor_length = editor.getLength(); 
-    if (editor_length <= 300) {
+    if (editor_length < 300) {
         alert("This letter must have at least 300 characters");
         return false;
     }
