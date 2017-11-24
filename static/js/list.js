@@ -41,7 +41,7 @@ function set_content(data, container) {
         });
         // name
         var $editor_name_div = $("<div />", {
-            "class": "editor-name-div pull-right"
+            "class": "editor-name-div"
         });
         var $editor_name_span = $("<span />", {
             "class": "editor-name-span",
@@ -51,7 +51,6 @@ function set_content(data, container) {
         var $editor_likes_div = $("<div />", {
             "class": "editor-likes-div",
         });
-        $editor_likes_div.css("text-align", "right");
         var $editor_likes_i = $("<i />", {
             "class": "fa fa-heart fa-2x editor-likes-i",
             "id": "likes-" + v["id"],
@@ -78,7 +77,6 @@ function set_content(data, container) {
                 toolbar: toolbarOptions
             },
         };
-        $editor_content_div.css("margin-bottom", "40px");
         $editor_title_a.append($editor_title_span);
         $editor_title_div.append($editor_title_a);
         $editor_likes_div.append($editor_likes_i);

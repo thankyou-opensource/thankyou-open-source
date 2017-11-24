@@ -248,7 +248,8 @@ pre {
 }
 
 .editor-wrapper-div {
-    margin-bottom: 100px;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .ql-container {
@@ -257,6 +258,7 @@ pre {
 
 .ql-editor {
     font-size: 1.5vw;
+    padding-bottom: 0px !important;
 }
 
 .editor-row {
@@ -271,6 +273,9 @@ pre {
     font-size: 1.5vw;
     color: gray;
     font-weight: 100;
+}
+.editor-name-div{
+    float: right;
 }
 
 .editor-likes-i {
@@ -325,7 +330,7 @@ pre {
         font-size: 5vw !important; 
     }
     .ql-editor {
-        font-size: 5vw; 
+        font-size: 5vw;
     }
 }
 
