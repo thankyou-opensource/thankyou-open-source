@@ -402,3 +402,7 @@ pre {
     background-color: white;
     color: #337ab7;
 }
+
+.selectize-input:after {
+    border-style: none !important;
+}
