@@ -411,3 +411,11 @@ pre {
 .selectize-input:after {
     border-style: none !important;
 }
+
+.fa-heart {
+    color: #e6563a;
+}
+
+.fa-twitter {
+    color: #009ef6;
+}
