@@ -4,7 +4,7 @@ from .models import Thanks
 
 
 class ThanksAdmin(admin.ModelAdmin):
-    list_display = ('title', 'name', 'repo', 'create_time',)
+    list_display = ('title', 'content', 'name', 'repo', 'create_time',)
     search_fields = ['title', 'repo']
     list_filter = ('repo',)
 
