@@ -37,7 +37,7 @@ function set_content(data, container) {
         });
         var $editor_title_span = $("<span />", {
             "class": "editor-title-span",
-            "text": v["title"]
+            "text": v["title"] + "(" + v["repo"] + ")",
         });
         // name
         var $editor_name_div = $("<div />", {
