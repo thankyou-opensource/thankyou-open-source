@@ -12,7 +12,7 @@ function get_thanks_list(repo, container) {
 
 function get_all_thanks_list(container) {
     $.ajax({
-        url: "/api/thanks/?limit=10",
+        url: "/api/thanks/?limit=20",
         type: "GET",
         dataType: "JSON",
         cache: true,
