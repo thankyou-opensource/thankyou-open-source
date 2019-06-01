@@ -84,12 +84,12 @@ pre {
 
 #header-thanks {
     margin-bottom: 0;
-    font-size: 5vw;
+    font-size: 8rem;
     color: white;
 }
 
 #header-details {
-    font-size: 2.3vw;
+    font-size: 3rem;
     font-weight: 100;
     color: white;
 }
@@ -204,7 +204,7 @@ pre {
 
 
 .say-thank-title {
-    font-size: 4.5vw;
+    font-size: 4rem;
     margin-bottom: 20px;
     word-wrap: break-word;
 }
@@ -241,7 +241,7 @@ pre {
 }
 
 .editor-title-span {
-    font-size: 3.5vw;
+    font-size: 4rem;
     font-weight: bold;
     -webkit-background-clip: text;
     background-clip: text;
@@ -257,7 +257,7 @@ pre {
 }
 
 .ql-editor {
-    font-size: 1.5vw;
+    font-size: 2rem;
     padding-bottom: 0px !important;
 }
 
@@ -266,11 +266,11 @@ pre {
 }
 
 .editor-likes-count {
-    font-size: 1.5vw;
+    font-size: 2rem;
 }
 
 .editor-name-span {
-    font-size: 1.5vw;
+    font-size: 2rem;
     color: gray;
     font-weight: 100;
 }
@@ -297,43 +297,6 @@ pre {
     margin-left: 10px;
 }
 
-@media only screen and (max-width: 767px) {
-    .why-href {
-        font-size: 3.5vw !important;
-    }
-    .editor-title-span {
-        font-size: 7vw; 
-    }
-    .editor-name-span {
-        font-size: 4vw; 
-    }
-    .editor-likes-i, .editor-likes-count {
-        font-size: 4vw; 
-    }
-    .say-thank-title {
-        font-size: 9vw; 
-    }
-    .repo-name, .repo-name span, .nav-repo-name, .nav-repo-name span{
-        font-size: 6vw !important; 
-    }
-    .front-btn {
-        font-size: 3.5vw !important; 
-    }
-    #header-thanks {
-        font-size: 10vw; 
-    }
-    #header-details {
-        font-size: 5vw; 
-    }
-
-    .list-btn-write {
-        font-size: 5vw !important; 
-    }
-    .ql-editor {
-        font-size: 5vw;
-    }
-}
-
 .say-thank-div {
     overflow: auto;
     text-align: center;
@@ -347,7 +310,7 @@ pre {
 
 .say-thank-span {
     display: block;
-    font-size: 7vw;
+    font-size: 3rem;
     font-weight: 500;
     color:transparent;
     -webkit-background-clip: text;
@@ -368,7 +331,7 @@ pre {
 .list-btn-write {
     border-radius: 10px;
 	color: #fff;
-    font-size: 2vw;
+    font-size: 1.5rem;
 	overflow: hidden;
     width: 100%;
     border: none;
@@ -394,7 +357,7 @@ pre {
 }
 
 .why-href {
-    font-size: 1.5vw;
+    font-size: 2rem;
 }
 
 #logo-t {
