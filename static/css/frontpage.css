@@ -5,7 +5,7 @@
 
 .front-btn {
 	color: #fff;
-    font-size: 1.5vw;
+    font-size: 2rem;
 	overflow: hidden;
     max-width: 100%;
 	background: none;
@@ -37,7 +37,7 @@
 }
 
 .repo-name {
-    font-size: 1.5vw;
+    font-size: 2rem;
 }
 
 #front-btn-w, #front-btn-b {
@@ -65,16 +65,9 @@
 }
 
 .intro-span-title {
-    font-size: 2vw;
+    font-size: 2.5rem;
 }
 
 .intro-span-p {
-    font-size: 1.8vw;
-    font-weight
-}
-
-@media only screen and (max-width: 767px) {
-    .intro-span-title {
-        font-size: 4vw;
-    }
+    font-size: 3rem;
 }
